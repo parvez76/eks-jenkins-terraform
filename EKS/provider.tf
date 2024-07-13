@@ -1,0 +1,18 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.58.0"
+    }
+  }
+
+  backend "s3" {
+    bucket = "eks-jenkins-parvez76"
+    key    = "eks/terraform.tfstate"
+    region = "ap-south-1"
+  }
+}
+
+provider "aws" {
+  region = "ap-south-1"
+}
